@@ -1,0 +1,9 @@
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ProDATA\bin\Debug\ProDATA.exe.config
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ProDATA\bin\Debug\ProDATA.exe
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ProDATA\bin\Debug\ProDATA.pdb
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ProDATA\obj\Debug\ProDATA.csprojResolveAssemblyReference.cache
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ProDATA\obj\Debug\ProDATA.Form1.resources
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ProDATA\obj\Debug\ProDATA.Properties.Resources.resources
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ProDATA\obj\Debug\ProDATA.csproj.GenerateResource.Cache
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ProDATA\obj\Debug\ProDATA.exe
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ProDATA\obj\Debug\ProDATA.pdb
