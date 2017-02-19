@@ -6,6 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="95d1528f71e444599a1aa4b274dabf84" Name="Diagram1">
         <EntityTypeShape EntityType="ProdataModel.login" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProdataModel.equipo" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProdataModel.Proyecto" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

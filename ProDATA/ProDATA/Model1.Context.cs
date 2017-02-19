@@ -26,5 +26,7 @@ namespace ProDATA
         }
     
         public virtual DbSet<login> logins { get; set; }
+        public virtual DbSet<equipo> equipoes { get; set; }
+        public virtual DbSet<Proyecto> Proyectoes { get; set; }
     }
 }

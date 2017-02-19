@@ -29,7 +29,11 @@ namespace ProDATA
             {
                 if (user.user.Replace(" ", " ") == Txtbuser.Text && user.password.Replace(" ", " ") == Txtbpassword.Text)
                 {
-                    MessageBox.Show("Funciona");
+                  
+                    FrmPrincipal frmprin = new FrmPrincipal();
+                    frmprin.Show();
+                    this.Hide();
+
                     return;
                 }else
                 {

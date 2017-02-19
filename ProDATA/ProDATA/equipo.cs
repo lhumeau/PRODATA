@@ -12,13 +12,14 @@ namespace ProDATA
     using System;
     using System.Collections.Generic;
     
-    public partial class login
+    public partial class equipo
     {
-        public long IdLogin { get; set; }
-        public string user { get; set; }
-        public string password { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Sexo { get; set; }
+        public long Idequipo { get; set; }
+        public string descripcion { get; set; }
+        public string familia { get; set; }
+        public string modelo { get; set; }
+        public Nullable<long> mantenimiento_programado { get; set; }
+        public string estadoequipo { get; set; }
+        public string condicion { get; set; }
     }
 }

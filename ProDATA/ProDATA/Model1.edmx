@@ -4,7 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProdataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProdataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="equipo">
+          <Key>
+            <PropertyRef Name="Idequipo" />
+          </Key>
+          <Property Name="Idequipo" Type="bigint" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" />
+          <Property Name="familia" Type="nvarchar" MaxLength="50" />
+          <Property Name="modelo" Type="nvarchar" MaxLength="50" />
+          <Property Name="mantenimiento_programado" Type="bigint" />
+          <Property Name="estadoequipo" Type="nvarchar" MaxLength="50" />
+          <Property Name="condicion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="login">
           <Key>
             <PropertyRef Name="IdLogin" />
@@ -16,11 +28,21 @@
           <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
           <Property Name="Sexo" Type="nchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="Idproyecto" />
+          </Key>
+          <Property Name="Idproyecto" Type="bigint" Nullable="false" />
+          <Property Name="Proyecto" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Fechainicio" Type="datetime2" Precision="7" />
+          <Property Name="Descripción" Type="nchar" MaxLength="10" />
+        </EntityType>
         <EntityContainer Name="ProdataModelStoreContainer">
+          <EntitySet Name="equipo" EntityType="Self.equipo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proyecto" EntityType="Self.Proyecto" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProdataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -37,7 +59,30 @@
         </EntityType>
         <EntityContainer Name="ProdataEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="logins" EntityType="Self.login" />
+          <EntitySet Name="equipoes" EntityType="ProdataModel.equipo" />
+          <EntitySet Name="Proyectoes" EntityType="ProdataModel.Proyecto" />
         </EntityContainer>
+        <EntityType Name="equipo">
+          <Key>
+            <PropertyRef Name="Idequipo" />
+          </Key>
+          <Property Name="Idequipo" Type="Int64" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="familia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mantenimiento_programado" Type="Int64" />
+          <Property Name="estadoequipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="condicion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="Idproyecto" />
+          </Key>
+          <Property Name="Idproyecto" Type="Int64" Nullable="false" />
+          <Property Name="Proyecto1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fechainicio" Type="DateTime" Precision="7" />
+          <Property Name="Descripción" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -53,6 +98,29 @@
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Apellido" ColumnName="Apellido" />
                 <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equipoes">
+            <EntityTypeMapping TypeName="ProdataModel.equipo">
+              <MappingFragment StoreEntitySet="equipo">
+                <ScalarProperty Name="condicion" ColumnName="condicion" />
+                <ScalarProperty Name="estadoequipo" ColumnName="estadoequipo" />
+                <ScalarProperty Name="mantenimiento_programado" ColumnName="mantenimiento_programado" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="familia" ColumnName="familia" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="Idequipo" ColumnName="Idequipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proyectoes">
+            <EntityTypeMapping TypeName="ProdataModel.Proyecto">
+              <MappingFragment StoreEntitySet="Proyecto">
+                <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+                <ScalarProperty Name="Fechainicio" ColumnName="Fechainicio" />
+                <ScalarProperty Name="Proyecto1" ColumnName="Proyecto" />
+                <ScalarProperty Name="Idproyecto" ColumnName="Idproyecto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

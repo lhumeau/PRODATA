@@ -11,3 +11,4 @@ C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\bin\Debug\EntityFramework.dl
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\bin\Debug\EntityFramework.xml
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\obj\Debug\ProDATA.FrmPrincipal.resources

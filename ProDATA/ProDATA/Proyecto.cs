@@ -12,13 +12,11 @@ namespace ProDATA
     using System;
     using System.Collections.Generic;
     
-    public partial class login
+    public partial class Proyecto
     {
-        public long IdLogin { get; set; }
-        public string user { get; set; }
-        public string password { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Sexo { get; set; }
+        public long Idproyecto { get; set; }
+        public string Proyecto1 { get; set; }
+        public Nullable<System.DateTime> Fechainicio { get; set; }
+        public string Descripción { get; set; }
     }
 }
