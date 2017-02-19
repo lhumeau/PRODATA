@@ -13,5 +13,28 @@
   </EntityType>
   <EntityContainer Name="ProdataEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="logins" EntityType="Self.login" />
+    <EntitySet Name="equipoes" EntityType="ProdataModel.equipo" />
+    <EntitySet Name="Proyectoes" EntityType="ProdataModel.Proyecto" />
   </EntityContainer>
+  <EntityType Name="equipo">
+    <Key>
+      <PropertyRef Name="Idequipo" />
+    </Key>
+    <Property Name="Idequipo" Type="Int64" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="familia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mantenimiento_programado" Type="Int64" />
+    <Property Name="estadoequipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="condicion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Proyecto">
+    <Key>
+      <PropertyRef Name="Idproyecto" />
+    </Key>
+    <Property Name="Idproyecto" Type="Int64" Nullable="false" />
+    <Property Name="Proyecto1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fechainicio" Type="DateTime" Precision="7" />
+    <Property Name="Descripción" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
 </Schema>

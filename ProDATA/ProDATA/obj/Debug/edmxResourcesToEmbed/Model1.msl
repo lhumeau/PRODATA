@@ -13,5 +13,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="equipoes">
+      <EntityTypeMapping TypeName="ProdataModel.equipo">
+        <MappingFragment StoreEntitySet="equipo">
+          <ScalarProperty Name="condicion" ColumnName="condicion" />
+          <ScalarProperty Name="estadoequipo" ColumnName="estadoequipo" />
+          <ScalarProperty Name="mantenimiento_programado" ColumnName="mantenimiento_programado" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="familia" ColumnName="familia" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="Idequipo" ColumnName="Idequipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proyectoes">
+      <EntityTypeMapping TypeName="ProdataModel.Proyecto">
+        <MappingFragment StoreEntitySet="Proyecto">
+          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+          <ScalarProperty Name="Fechainicio" ColumnName="Fechainicio" />
+          <ScalarProperty Name="Proyecto1" ColumnName="Proyecto" />
+          <ScalarProperty Name="Idproyecto" ColumnName="Idproyecto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

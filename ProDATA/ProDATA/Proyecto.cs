@@ -18,5 +18,10 @@ namespace ProDATA
         public string Proyecto1 { get; set; }
         public Nullable<System.DateTime> Fechainicio { get; set; }
         public string Descripción { get; set; }
+
+        public static implicit operator Proyecto(Proyecto v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

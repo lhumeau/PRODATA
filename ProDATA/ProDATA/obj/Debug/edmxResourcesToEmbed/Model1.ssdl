@@ -1,17 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ProdataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="equipo">
+    <Key>
+      <PropertyRef Name="Idequipo" />
+    </Key>
+    <Property Name="Idequipo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar(max)" />
+    <Property Name="familia" Type="nvarchar" MaxLength="50" />
+    <Property Name="modelo" Type="nvarchar" MaxLength="50" />
+    <Property Name="mantenimiento_programado" Type="bigint" />
+    <Property Name="estadoequipo" Type="nvarchar" MaxLength="50" />
+    <Property Name="condicion" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="login">
     <Key>
       <PropertyRef Name="IdLogin" />
     </Key>
-    <Property Name="IdLogin" Type="bigint" Nullable="false" />
+    <Property Name="IdLogin" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="user" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
     <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
     <Property Name="Sexo" Type="nchar" MaxLength="10" />
   </EntityType>
+  <EntityType Name="Proyecto">
+    <Key>
+      <PropertyRef Name="Idproyecto" />
+    </Key>
+    <Property Name="Idproyecto" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Proyecto" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Fechainicio" Type="datetime2" Precision="7" />
+    <Property Name="Descripción" Type="nchar" MaxLength="10" />
+  </EntityType>
   <EntityContainer Name="ProdataModelStoreContainer">
+    <EntitySet Name="equipo" EntityType="Self.equipo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proyecto" EntityType="Self.Proyecto" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

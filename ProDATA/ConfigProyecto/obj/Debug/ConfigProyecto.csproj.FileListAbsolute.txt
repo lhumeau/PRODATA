@@ -1,0 +1,4 @@
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ConfigProyecto\obj\Debug\ConfigProyecto.csprojResolveAssemblyReference.cache
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ConfigProyecto\obj\Debug\ConfigProyecto.FrmConfigProyecto.resources
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ConfigProyecto\obj\Debug\ConfigProyecto.Properties.Resources.resources
+C:\Users\G\Documents\GitHub\ProData\ProDATA\ConfigProyecto\obj\Debug\ConfigProyecto.csproj.GenerateResource.Cache

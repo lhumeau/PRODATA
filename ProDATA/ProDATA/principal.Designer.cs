@@ -88,6 +88,7 @@
             this.proyectosToolStripMenuItem.Name = "proyectosToolStripMenuItem";
             this.proyectosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.proyectosToolStripMenuItem.Text = "Proyectos";
+            this.proyectosToolStripMenuItem.Click += new System.EventHandler(this.proyectosToolStripMenuItem_Click);
             // 
             // equiposToolStripMenuItem
             // 

@@ -21,5 +21,14 @@ namespace ProDATA
         {
 
         }
+
+        private void proyectosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmconfigproyectos frmconfigproyectos = new frmconfigproyectos();
+            frmconfigproyectos.Show();
+            this.Hide();
+        
+        }
     }
 }

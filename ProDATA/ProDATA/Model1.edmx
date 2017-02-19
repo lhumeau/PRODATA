@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Idequipo" />
           </Key>
-          <Property Name="Idequipo" Type="bigint" Nullable="false" />
+          <Property Name="Idequipo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descripcion" Type="nvarchar(max)" />
           <Property Name="familia" Type="nvarchar" MaxLength="50" />
           <Property Name="modelo" Type="nvarchar" MaxLength="50" />
@@ -21,7 +21,7 @@
           <Key>
             <PropertyRef Name="IdLogin" />
           </Key>
-          <Property Name="IdLogin" Type="bigint" Nullable="false" />
+          <Property Name="IdLogin" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="user" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="password" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
@@ -32,7 +32,7 @@
           <Key>
             <PropertyRef Name="Idproyecto" />
           </Key>
-          <Property Name="Idproyecto" Type="bigint" Nullable="false" />
+          <Property Name="Idproyecto" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Proyecto" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Fechainicio" Type="datetime2" Precision="7" />
           <Property Name="Descripción" Type="nchar" MaxLength="10" />
