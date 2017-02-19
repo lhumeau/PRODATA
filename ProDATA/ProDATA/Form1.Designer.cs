@@ -32,8 +32,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lbluser = new System.Windows.Forms.Label();
             this.lblpassword = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Txtbuser = new System.Windows.Forms.TextBox();
+            this.Txtbpassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -45,6 +45,7 @@
             this.btnAcceder.TabIndex = 0;
             this.btnAcceder.Text = "Acceder";
             this.btnAcceder.UseVisualStyleBackColor = true;
+            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
             // btnCancelar
             // 
@@ -54,6 +55,7 @@
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Salir";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lbluser
             // 
@@ -73,19 +75,19 @@
             this.lblpassword.TabIndex = 3;
             this.lblpassword.Text = "Contraseña";
             // 
-            // textBox1
+            // Txtbuser
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.Txtbuser.Location = new System.Drawing.Point(82, 50);
+            this.Txtbuser.Name = "Txtbuser";
+            this.Txtbuser.Size = new System.Drawing.Size(100, 20);
+            this.Txtbuser.TabIndex = 4;
             // 
-            // textBox2
+            // Txtbpassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.Txtbpassword.Location = new System.Drawing.Point(82, 76);
+            this.Txtbpassword.Name = "Txtbpassword";
+            this.Txtbpassword.Size = new System.Drawing.Size(100, 20);
+            this.Txtbpassword.TabIndex = 5;
             // 
             // label1
             // 
@@ -102,8 +104,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(221, 172);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Txtbpassword);
+            this.Controls.Add(this.Txtbuser);
             this.Controls.Add(this.lblpassword);
             this.Controls.Add(this.lbluser);
             this.Controls.Add(this.btnCancelar);
@@ -121,8 +123,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lbluser;
         private System.Windows.Forms.Label lblpassword;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txtbuser;
+        private System.Windows.Forms.TextBox Txtbpassword;
         private System.Windows.Forms.Label label1;
     }
 }
