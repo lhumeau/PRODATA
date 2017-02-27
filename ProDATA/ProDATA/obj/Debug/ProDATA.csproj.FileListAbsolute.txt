@@ -5,7 +5,6 @@ C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\bin\Debug\EntityFramework.dl
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\bin\Debug\EntityFramework.xml
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\obj\Debug\ProDATA.csprojResolveAssemblyReference.cache
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\obj\Debug\ProDATA.frmconfigproyectos.resources
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\obj\Debug\ProDATA.frmLogin.resources
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\obj\Debug\ProDATA.FrmPrincipal.resources
@@ -13,3 +12,4 @@ C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\obj\Debug\ProDATA.Properties
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\obj\Debug\ProDATA.csproj.GenerateResource.Cache
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\obj\Debug\ProDATA.exe
 C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\obj\Debug\ProDATA.pdb
+C:\Users\G\Documents\GitHub\ProData\ProData\ProDATA\obj\Debug\ProDATA.csprojResolveAssemblyReference.cache

@@ -37,11 +37,13 @@
             this.proyectoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proyectoTableAdapter = new ProDATA.ProdataDataSetTableAdapters.ProyectoTableAdapter();
             this.tableAdapterManager = new ProDATA.ProdataDataSetTableAdapters.TableAdapterManager();
-            this.idproyectoTextBox = new System.Windows.Forms.TextBox();
-            this.proyectoTextBox = new System.Windows.Forms.TextBox();
             this.fechainicioDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.descripciónTextBox = new System.Windows.Forms.TextBox();
             this.proyectoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbldescriptivo = new System.Windows.Forms.Label();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
@@ -53,10 +55,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbltiempo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proyectoTextBox = new System.Windows.Forms.TextBox();
+            this.idproyectoTextBox = new System.Windows.Forms.TextBox();
+            this.btnLimpiarBusqueda = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             idproyectoLabel = new System.Windows.Forms.Label();
             proyectoLabel = new System.Windows.Forms.Label();
             fechainicioLabel = new System.Windows.Forms.Label();
@@ -125,26 +127,8 @@
             this.tableAdapterManager.ProyectoTableAdapter = this.proyectoTableAdapter;
             this.tableAdapterManager.UpdateOrder = ProDATA.ProdataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // idproyectoTextBox
-            // 
-            this.idproyectoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectoBindingSource, "Idproyecto", true));
-            this.idproyectoTextBox.Location = new System.Drawing.Point(87, 48);
-            this.idproyectoTextBox.Name = "idproyectoTextBox";
-            this.idproyectoTextBox.ReadOnly = true;
-            this.idproyectoTextBox.Size = new System.Drawing.Size(47, 20);
-            this.idproyectoTextBox.TabIndex = 2;
-            // 
-            // proyectoTextBox
-            // 
-            this.proyectoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectoBindingSource, "Proyecto", true));
-            this.proyectoTextBox.Location = new System.Drawing.Point(87, 74);
-            this.proyectoTextBox.Name = "proyectoTextBox";
-            this.proyectoTextBox.Size = new System.Drawing.Size(200, 20);
-            this.proyectoTextBox.TabIndex = 4;
-            // 
             // fechainicioDateTimePicker
             // 
-            this.fechainicioDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.proyectoBindingSource, "Fechainicio", true));
             this.fechainicioDateTimePicker.Location = new System.Drawing.Point(87, 100);
             this.fechainicioDateTimePicker.Name = "fechainicioDateTimePicker";
             this.fechainicioDateTimePicker.Size = new System.Drawing.Size(200, 20);
@@ -152,7 +136,6 @@
             // 
             // descripciónTextBox
             // 
-            this.descripciónTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectoBindingSource, "Descripción", true));
             this.descripciónTextBox.Location = new System.Drawing.Point(87, 126);
             this.descripciónTextBox.Multiline = true;
             this.descripciónTextBox.Name = "descripciónTextBox";
@@ -163,6 +146,7 @@
             // 
             this.proyectoDataGridView.AllowUserToAddRows = false;
             this.proyectoDataGridView.AllowUserToDeleteRows = false;
+            this.proyectoDataGridView.AllowUserToOrderColumns = true;
             this.proyectoDataGridView.AutoGenerateColumns = false;
             this.proyectoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.proyectoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -171,11 +155,41 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.proyectoDataGridView.DataSource = this.proyectoBindingSource;
-            this.proyectoDataGridView.Location = new System.Drawing.Point(82, 254);
+            this.proyectoDataGridView.Location = new System.Drawing.Point(82, 284);
             this.proyectoDataGridView.Name = "proyectoDataGridView";
             this.proyectoDataGridView.ReadOnly = true;
+            this.proyectoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.proyectoDataGridView.Size = new System.Drawing.Size(443, 220);
             this.proyectoDataGridView.TabIndex = 9;
+            this.proyectoDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.proyectoDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Idproyecto";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID_Proyecto";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Proyecto";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Proyecto";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Fechainicio";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Fecha inicio";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Descripción";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // lbldescriptivo
             // 
@@ -188,25 +202,27 @@
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(188, 225);
+            this.BtnBuscar.Location = new System.Drawing.Point(193, 254);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
             this.BtnBuscar.TabIndex = 11;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // BtnEditar
             // 
-            this.BtnEditar.Location = new System.Drawing.Point(269, 225);
+            this.BtnEditar.Location = new System.Drawing.Point(82, 510);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(75, 23);
             this.BtnEditar.TabIndex = 12;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(351, 225);
+            this.btnActualizar.Location = new System.Drawing.Point(178, 510);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 13;
@@ -215,7 +231,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(82, 227);
+            this.txtBuscar.Location = new System.Drawing.Point(87, 257);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 14;
@@ -272,39 +288,47 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // dataGridViewTextBoxColumn1
+            // proyectoTextBox
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Idproyecto";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID_Proyecto";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.proyectoTextBox.Location = new System.Drawing.Point(87, 74);
+            this.proyectoTextBox.Name = "proyectoTextBox";
+            this.proyectoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.proyectoTextBox.TabIndex = 4;
             // 
-            // dataGridViewTextBoxColumn2
+            // idproyectoTextBox
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Proyecto";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Proyecto";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.idproyectoTextBox.Location = new System.Drawing.Point(87, 48);
+            this.idproyectoTextBox.Name = "idproyectoTextBox";
+            this.idproyectoTextBox.ReadOnly = true;
+            this.idproyectoTextBox.Size = new System.Drawing.Size(47, 20);
+            this.idproyectoTextBox.TabIndex = 2;
             // 
-            // dataGridViewTextBoxColumn3
+            // btnLimpiarBusqueda
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Fechainicio";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Fecha inicio";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(274, 254);
+            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
+            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(80, 23);
+            this.btnLimpiarBusqueda.TabIndex = 21;
+            this.btnLimpiarBusqueda.Text = "Bor. Busq";
+            this.btnLimpiarBusqueda.UseVisualStyleBackColor = true;
+            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
             // 
-            // dataGridViewTextBoxColumn4
+            // label1
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Descripción";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(222, 214);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Buscar en Cuadro";
             // 
             // frmconfigproyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 607);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnLimpiarBusqueda);
             this.Controls.Add(this.lbltiempo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegresar);
@@ -342,8 +366,6 @@
         private System.Windows.Forms.BindingSource proyectoBindingSource;
         private ProdataDataSetTableAdapters.ProyectoTableAdapter proyectoTableAdapter;
         private ProdataDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox idproyectoTextBox;
-        private System.Windows.Forms.TextBox proyectoTextBox;
         private System.Windows.Forms.DateTimePicker fechainicioDateTimePicker;
         private System.Windows.Forms.TextBox descripciónTextBox;
         private System.Windows.Forms.DataGridView proyectoDataGridView;
@@ -362,5 +384,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.TextBox proyectoTextBox;
+        private System.Windows.Forms.TextBox idproyectoTextBox;
+        private System.Windows.Forms.Button btnLimpiarBusqueda;
+        private System.Windows.Forms.Label label1;
     }
 }

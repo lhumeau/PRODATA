@@ -18,7 +18,11 @@ namespace ProDATA
 
         public frmLogin()
         {
+
+
             InitializeComponent();
+
+
         }
 
         ProdataEntities ef = new ProdataEntities();
@@ -48,6 +52,8 @@ namespace ProDATA
 
 
         }
+        
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -57,7 +63,13 @@ namespace ProDATA
             }
         }
 
-
+        private void txtMessage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals(Convert.ToChar(13)))
+            {
+                btnAcceder.PerformClick();
+            }
+        }
 
 
 

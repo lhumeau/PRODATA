@@ -84,6 +84,8 @@
             // 
             // Txtbpassword
             // 
+            this.Txtbpassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Txtbpassword.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.Txtbpassword.Location = new System.Drawing.Point(82, 76);
             this.Txtbpassword.Name = "Txtbpassword";
             this.Txtbpassword.PasswordChar = '*';
@@ -101,6 +103,7 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnAcceder;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(221, 172);
