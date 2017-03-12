@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
-
+using System.Data.Entity.Infrastructure;
 
 namespace ProDATA
 {
@@ -154,33 +154,51 @@ namespace ProDATA
         {
             if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {
-            //    Grid row = proyectoDataGridView.Rows[e.row]
-            //    string proyectoid = Convert.ToInt32(proyectoDataGridView.DataKeys);
-            //    using (ProdataEntities context = new ProdataEntities())
-            //    {
-                    
-            //        {
-            //            Proyecto proyecto = (from c in context.Proyectoes
-            //                                 where c.Idproyecto == idproyectoTextBox
-            //                                 select c).FirstOrDefault();
-            //            proyecto.
+                // Instanciamos el DbContext
+                var dbcontext = new ProdataEntities();
+                // Extraemos el ObjectContext del DbContext (a partir de Entity Framework 4.1)
+                var objectContext = ((IObjectContextAdapter)dbContext).ObjectContext;
+                Proyecto dbproyeecto = new Proyecto()
+                {
 
 
-            //        };
-
-            //        context.Proyectoes.Add(proyecto2);
-            //        context.SaveChanges();
-            //        this.proyectoTableAdapter.Fill(this.prodataDataSet.Proyecto);
+                };
 
 
-            //    };
-            //}else
-            //{
-            //    this.proyectoTableAdapter.Fill(this.prodataDataSet.Proyecto);
-            //    BtnEditar.Text = "Editar";
+
+
+                //  Grid row = proyectoDataGridView.Rows[e.row]
+                //string proyectoid = Convert.ToInt32(proyectoDataGridView.DataKeys);
+                //using (ProdataEntities context = new ProdataEntities())
+                //    {
+
+                //        {
+                //            Proyecto proyecto = (from c in context.Proyectoes
+                //                                 where c.Idproyecto == idproyectoTextBox
+                //                                 select c).FirstOrDefault();
+                //            proyecto.
+
+
+                //        };
+
+                //        context.Proyectoes.Add(proyecto2);
+                //        context.SaveChanges();
+                //        this.proyectoTableAdapter.Fill(this.prodataDataSet.Proyecto);
+
+
+                //    };
+                //}else
+                //{
+                //    this.proyectoTableAdapter.Fill(this.prodataDataSet.Proyecto);
+                //    BtnEditar.Text = "Editar";
 
             }
 
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.Controls.OfType<TextBox>().ToList().ForEach(o => o.Text = "");
         }
     }
         }

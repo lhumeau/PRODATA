@@ -254,6 +254,7 @@
             this.BtnLimpiar.TabIndex = 17;
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.UseVisualStyleBackColor = true;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // btnRegresar
             // 
